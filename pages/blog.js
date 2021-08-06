@@ -1,4 +1,4 @@
-import { getAllPostSlugs } from '../lib/api'
+import { getAllPostSlugs, getAllPosts } from '../lib/api'
 
 const blog = () => {
   return (
@@ -10,8 +10,8 @@ const blog = () => {
 
 export default blog
 
-export const getStaticPaths = async () => {
-  const allPostSlugs = await getAllPostSlugs()
+export async function getStaticPaths() {
+  const allPostSlugs = await getAllPosts()
 
   // console.log(allPostSlugs)
 }
